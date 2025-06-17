@@ -2,11 +2,11 @@
 
 // data ko save karne se phele validate karenge fir user create karenge ye sab pass hone ke baad
 // controllers/user.controllers.js
-
 const userModel = require('../models/user.model');
 const userService = require('../services/user.service');
 const { validationResult } = require('express-validator');
-const blacklistTokenModel = require('../models/blackListToken.model.js');  
+const blackListTokenModel = require('../models/blacklistToken.model.js');   // ✅ Use consistent name
+const bcrypt = require('bcrypt');  // ✅ Required for hashing here
 
 //! register routes
 module.exports.registerUser = async (req, res, next) => {
@@ -18,7 +18,11 @@ module.exports.registerUser = async (req, res, next) => {
 
     const { fullname, email, password } = req.body;
 
-
+  const isUserAlreadyExist = await userModel.findOne({email})
+  if(isUserAlreadyExist){
+    res.status(400).json({ message: 'User already exists' });
+    
+  }
 
     const hashedPassword = await userModel.hashPassword(password);
 
@@ -74,6 +78,6 @@ module.exports.getUserProfile = async (req, res, next) => {
 module.exports.logoutUser = async (req, res, next) => {
       res.clearCookie('token'); // ye cookie ko clear kar dega
       const token = req.cookies.token || req.headers.authorization.split(' ')[1];
-      await blacklistTokenModel.create({ token }); // ye token ko blacklist kar dega
+      await blackListTokenModel.create({ token }); // ye token ko blacklist kar dega
       res.status(200).json({ message: 'Logout successful' });
 }

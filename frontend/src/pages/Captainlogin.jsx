@@ -1,18 +1,32 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { CaptainDataContext } from '../context/CaptainContext.jsx'
+import { useContext } from 'react'  
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const Captainlogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [captainData , setCaptainData] = useState({})
-  const submitHandler = (e) => {
+   const {captain , setCaptain} = useContext(CaptainDataContext);
+   const navigate  = useNavigate()
+ 
+  const submitHandler = async (e) => {
     e.preventDefault()
-    setCaptainData({
+  
+    const captainData = {
       email: email,
-      password: password
-    })
+      password: password,
+    } 
+ const response =  await axios.post(`${import.meta.env.VITE_BASE_URL}/captain/login`, captainData)
+  if(response.status === 200){
+    const data = response.data;
+    setCaptain(data.captain)
+    localStorage.setItem('token', data.token)
+    navigate('/captain-home')
+  }
 
     setEmail('')
     setPassword('')
@@ -27,7 +41,7 @@ const Captainlogin = () => {
           alt="Logo"
         />
 
-        <from onSubmit={e => submitHandler(e)}>
+        <form onSubmit={e => submitHandler(e)}>
           <h3 className="text-lg font-medium mb-2">What's your email</h3>
           <input
             className="w-full p-3 border-2 border-gray-400 rounded-md focus:outline-none focus:ring-0 focus:border-orange-400 transition"
@@ -57,7 +71,7 @@ const Captainlogin = () => {
             Register as a Captain
             </Link>{" "}
           </p>
-        </from>
+        </form>
       </div>
       <div>
         <Link to='/login' className="bg-[#d5622d] flex items-center justify-center font-semibold mb-7 rounded px-4 py-2 w-full text-lg placeholder:text-base ">

@@ -30,7 +30,7 @@ const UserSignup = () => {
     // console.log('User Data:', userData) // uncomment if needed for debugging
     //! send data to backend
   const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/user/register`, newUser)
-  if(response.status == 200){
+  if(response.status === 200){
     const data = response.data
 
     setUser(data.user)

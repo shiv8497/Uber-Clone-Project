@@ -1,7 +1,7 @@
 import React from "react";
-import Home from "./pages/Start.jsx";
+import Home from "./pages/Home.jsx";
 import { Routes, Route } from "react-router-dom";
-import UserLogin from "./pages/UserLogin.jsx";
+import UserLogin from './pages/UserLogin.jsx'
 import CaptainSignup from "./pages/CaptainSignup.jsx";
 import Captainlogin from "./pages/Captainlogin.jsx";
 import UserSignup from "./pages/UserSignup.jsx";
@@ -12,12 +12,14 @@ import CaptainHome from "./pages/CaptainHome.jsx";
 import CaptainProtectedWrapper from "./pages/CaptainProtectedWrapper.jsx";
 import CaptainLogout from "./pages/CaptainLogout.jsx";
 
+//! 5:35 se dekhna hai
+
 const App = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Start />} />
-        <Route path="/login" element={<UserLogin />} />
+        <Route path="/login" element={<UserLogin/>} />
         <Route path="/signup" element={<UserSignup />} />
         <Route path="/captain-signup" element={<CaptainSignup />} />
         <Route path="/captain-login" element={<Captainlogin />} />
@@ -25,7 +27,7 @@ const App = () => {
           path="/home"
           element={
             <UserProtectedWrapper>
-              <Home />
+              <Home/>
             </UserProtectedWrapper>
           }
         />
@@ -56,6 +58,7 @@ const App = () => {
       />
     </div>
   );
+  
 };
 
 export default App;

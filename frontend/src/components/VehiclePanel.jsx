@@ -34,7 +34,7 @@ const VehiclePanel = (props) => {
         <h2 className="font-semibold text-lg">₹500.93</h2>
       </div>
       <div
-        onClick={() => props.setconfirmRidePanel(true)}
+        onClick={() => props.setConfirmRidePanel(true)}
         className="flex border-2 bg-gray-50  border-transparent active:border-black  mb-2 rounded-xl  w-full p-3 items-center justify-between"
       >
         <img

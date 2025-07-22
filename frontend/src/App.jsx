@@ -11,23 +11,26 @@ import UserLogout from "./pages/UserLogout.jsx";
 import CaptainHome from "./pages/CaptainHome.jsx";
 import CaptainProtectedWrapper from "./pages/CaptainProtectedWrapper.jsx";
 import CaptainLogout from "./pages/CaptainLogout.jsx";
+import Riding from "./pages/Riding.jsx";
 
-//! 5:35 se dekhna hai
+//! 5:27 se dekha hai 
+//! pop up button create karna hai
 
 const App = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Start />} />
-        <Route path="/login" element={<UserLogin/>} />
+        <Route path="/login" element={<UserLogin />} />
         <Route path="/signup" element={<UserSignup />} />
+        <Route path="/riding" element={<Riding />} />
         <Route path="/captain-signup" element={<CaptainSignup />} />
         <Route path="/captain-login" element={<Captainlogin />} />
         <Route
           path="/home"
           element={
             <UserProtectedWrapper>
-              <Home/>
+              <Home />
             </UserProtectedWrapper>
           }
         />
@@ -58,7 +61,7 @@ const App = () => {
       />
     </div>
   );
-  
+
 };
 
 export default App;

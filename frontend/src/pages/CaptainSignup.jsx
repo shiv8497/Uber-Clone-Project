@@ -11,7 +11,7 @@ const CaptainSignup = () => {
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [userData, setUserData] = useState({});
+  // const [userData, setUserData] = useState({});f
   const [vehiclecolor, setVehicleColor] = useState("");
   const [vehicleplate, setVehiclePlate] = useState("");
   const [vehiclecapacity, setVehicleCapacity] = useState("");
@@ -174,20 +174,20 @@ const CaptainSignup = () => {
          
           
           </form>
-          <p className="text-center ">
+          <p className="text-center mt-2 ">
             Already have a account?{" "}
             <Link to="/captain-login" className="text-blue-600">
               Login here
             </Link>
           </p>
         </div>
-        {/* <div>
-              <p className="text-[10px] leading-tight">
+        <div>
+              <p className="text-[10px] mt-5 leading-tight">
               This site is protected by reCAPTCHA and the{" "}
               <span className="underline">Google Privacy Policy</span> and{" "}
               <span className="underline">Terms of Service apply</span>.
               </p>
-            </div> */}
+            </div>
       </div>
     </div>
   );

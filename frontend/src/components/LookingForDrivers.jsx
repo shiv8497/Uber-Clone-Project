@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LookingForDrivers = () => {
+const LookingForDrivers = (props) => {
   return (
     <div>
       <h5

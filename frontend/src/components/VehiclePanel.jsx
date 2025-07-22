@@ -11,7 +11,7 @@ const VehiclePanel = (props) => {
       </h5>
       <h3 className="text-2xl font-semibold mb-5">Choose a Vehicle</h3>
       <div
-        onClick={() => props.setconfirmRidePanel(true)}
+        onClick={() => props.setConfirmRidePanel(true)}
         className="flex border-2 bg-gray-50  border-transparent active:border-black  mb-2 rounded-xl  w-full p-3 items-center justify-between"
       >
         <img
@@ -58,7 +58,7 @@ const VehiclePanel = (props) => {
       </div>
 
       <div
-        onClick={() => props.setconfirmRidePanel(true)}
+        onClick={() => props.setConfirmRidePanel(true)}
         className="flex border-2 bg-gray-50 border-transparent active:border-black mb-2 rounded-xl  w-full p-3 items-center justify-between"
       >
         <img

@@ -13,8 +13,8 @@ import CaptainProtectedWrapper from "./pages/CaptainProtectedWrapper.jsx";
 import CaptainLogout from "./pages/CaptainLogout.jsx";
 import Riding from "./pages/Riding.jsx";
 
-//! 5:27 se dekha hai 
-//! pop up button create karna hai
+//! 6-55 se dekha hai 
+//!  drop off
 
 const App = () => {
   return (

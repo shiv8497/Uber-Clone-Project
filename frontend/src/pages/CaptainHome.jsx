@@ -62,8 +62,8 @@ const CaptainHome = () => {
       <div className="h-3/5">
         <img
           className="h-full w-full object-cover"
-          src="https://miro.medium.com/v2/resize:fit:1400/0*gwMx05pqII5hbfmX.gif"
-          alt=""
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPBjz8XvwtbKc5xegafhlxo6F9eH5NDMbMHw&s"
+          alt="map"
         />
       </div>
 

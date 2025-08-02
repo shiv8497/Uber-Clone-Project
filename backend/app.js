@@ -8,6 +8,7 @@ const userRoutes = require('./routes/user.routes.js')
 const cookieParser = require('cookie-parser')
 const captainRoutes = require('./routes/captain.routes.js')
 const mapRoutes = require('./routes/map.routes.js')
+const rideRoutes = require('./routes/ride.routes.js')
 connectToDB()
 
 
@@ -22,7 +23,7 @@ app.get('/' , (req , res) => {
 app.use('/user', userRoutes) // isse tumhe user routes milega jo tumne create kiya hai
 app.use('/captain', captainRoutes) // isse tumhe captain routes milega jo tumne create kiya hai 
 app.use('/maps' , mapRoutes)
-
+app.use('/rides' , rideRoutes) // isse tumhe ride routes milega jo tumne create kiya hai 
 
 module.exports = app
 
